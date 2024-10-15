@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.NetWorthActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_clr"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:text="NetWorth Calculator"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/back_arrow"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/titleText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/titleText"
+            app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_title">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/liquid_AssertBtn"
+                android:layout_width="@dimen/_131sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:background="@drawable/btn_blue_back"
+                android:drawableStart="@drawable/liquidwhiteicon"
+                android:drawableEnd="@drawable/minusicon"
+                android:padding="8dp"
+                android:text="Liquid Assert"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/invest_AssertBtn"
+                android:layout_width="@dimen/_131sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/back_solid"
+                android:drawableStart="@drawable/investmentdisable"
+                android:drawableEnd="@drawable/addicon"
+                android:padding="8dp"
+                android:text="Investment Assert"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/retirement_AssertBtn"
+                android:layout_width="@dimen/_131sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/back_solid"
+                android:drawableStart="@drawable/retirementblackicon"
+                android:drawableEnd="@drawable/addicon"
+                android:padding="8dp"
+                android:text="Retirement Assert"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/personal_AssertBtn"
+                android:layout_width="@dimen/_131sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/back_solid"
+                android:drawableStart="@drawable/apy"
+                android:drawableEnd="@drawable/addicon"
+                android:padding="8dp"
+                android:text="Personal Assert"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/short_LabilitiesBtn"
+                android:layout_width="@dimen/_131sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/back_solid"
+                android:drawableStart="@drawable/shortlibblack"
+                android:drawableEnd="@drawable/addicon"
+                android:padding="8dp"
+                android:text="Short-Term Liabilities"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Long_LabilitiesBtn"
+                android:layout_width="@dimen/_131sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/back_solid"
+                android:drawableStart="@drawable/shortlibblack"
+                android:drawableEnd="@drawable/addicon"
+                android:padding="8dp"
+                android:text="Long-Term Liabilities"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <ScrollView
+        android:id="@+id/myScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/reset_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/assert_liquid_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/liquidAssertText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Liquid Assert"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cashText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="Cash"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/liquidAssertText" />
+
+                <EditText
+                    android:id="@+id/cashEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cashText" />
+
+                <TextView
+                    android:id="@+id/savingAccountsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Saving Accounts"
+                    app:layout_constraintBottom_toTopOf="@+id/savingAccountsEdit"
+                    app:layout_constraintStart_toStartOf="@+id/savingAccountsEdit" />
+
+                <EditText
+                    android:id="@+id/savingAccountsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cashEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cashEdit"
+                    app:layout_constraintTop_toTopOf="@+id/cashEdit" />
+
+                <TextView
+                    android:id="@+id/checkingAccountsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Checking Accounts"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cashEdit" />
+
+                <EditText
+                    android:id="@+id/checkingAccountsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkingAccountsText" />
+
+                <TextView
+                    android:id="@+id/lifeInsuranceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Life Insurance"
+                    app:layout_constraintBottom_toTopOf="@+id/lifeInsuranceEdit"
+                    app:layout_constraintStart_toStartOf="@+id/lifeInsuranceEdit" />
+
+                <EditText
+                    android:id="@+id/lifeInsuranceEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkingAccountsEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/checkingAccountsEdit"
+                    app:layout_constraintTop_toTopOf="@+id/checkingAccountsEdit" />
+
+
+                <TextView
+                    android:id="@+id/otherCashText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Other"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkingAccountsEdit" />
+
+                <EditText
+                    android:id="@+id/otherCashEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/otherCashText" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/assert_investment_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/assert_liquid_layout">
+
+                <TextView
+                    android:id="@+id/investmentAssertText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Investment Assert"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/realEstateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="Real Estate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/investmentAssertText" />
+
+                <EditText
+                    android:id="@+id/realEstateEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/realEstateText" />
+
+                <TextView
+                    android:id="@+id/term_depositsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Term Deposits"
+                    app:layout_constraintBottom_toBottomOf="@+id/realEstateText"
+                    app:layout_constraintStart_toStartOf="@+id/term_depositsEdit"
+                    app:layout_constraintTop_toTopOf="@+id/realEstateText" />
+
+                <EditText
+                    android:id="@+id/term_depositsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/realEstateEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/realEstateEdit"
+                    app:layout_constraintTop_toBottomOf="@+id/term_depositsText" />
+
+                <TextView
+                    android:id="@+id/stocksText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Stocks"
+                    app:layout_constraintStart_toStartOf="@id/realEstateEdit"
+                    app:layout_constraintTop_toBottomOf="@id/realEstateEdit" />
+
+                <EditText
+                    android:id="@+id/stocksEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/stocksText" />
+
+                <TextView
+                    android:id="@+id/bondsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Bonds"
+                    app:layout_constraintBottom_toTopOf="@+id/bondsEdit"
+                    app:layout_constraintStart_toStartOf="@+id/bondsEdit" />
+
+                <EditText
+                    android:id="@+id/bondsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/stocksEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/stocksEdit"
+                    app:layout_constraintTop_toTopOf="@+id/stocksEdit" />
+
+                <TextView
+                    android:id="@+id/mutualFundsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Mutual Funds"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/stocksEdit" />
+
+                <EditText
+                    android:id="@+id/mutualFundsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mutualFundsText" />
+
+
+                <TextView
+                    android:id="@+id/businessInterestsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Business Interests"
+                    app:layout_constraintStart_toStartOf="@+id/bondsEdit"
+                    app:layout_constraintTop_toBottomOf="@+id/bondsEdit" />
+
+                <EditText
+                    android:id="@+id/businessInterestsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/mutualFundsEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/mutualFundsEdit"
+                    app:layout_constraintTop_toBottomOf="@+id/businessInterestsText" />
+
+
+                <TextView
+                    android:id="@+id/otherText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Other"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mutualFundsEdit" />
+
+                <EditText
+                    android:id="@+id/otherEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/otherText" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/assert_retirement_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/assert_investment_Layout">
+
+                <TextView
+                    android:id="@+id/retirementAssertText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Retirement Assert"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/irasText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="IRAs"
+                    app:layout_constraintStart_toStartOf="@+id/retirementAssertText"
+                    app:layout_constraintTop_toBottomOf="@+id/retirementAssertText" />
+
+                <EditText
+                    android:id="@+id/irasEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/irasText" />
+
+                <TextView
+                    android:id="@+id/nmbrText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="401ks"
+                    app:layout_constraintBottom_toTopOf="@+id/nmbrEdit"
+                    app:layout_constraintStart_toStartOf="@+id/nmbrEdit" />
+
+                <EditText
+                    android:id="@+id/nmbrEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/irasEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/irasEdit"
+                    app:layout_constraintTop_toTopOf="@+id/irasEdit" />
+
+                <TextView
+                    android:id="@+id/keoghAccountsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Keogh Accounts"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/irasEdit" />
+
+                <EditText
+                    android:id="@+id/keoghAccountsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/keoghAccountsText" />
+
+                <TextView
+                    android:id="@+id/pensionsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Pensions"
+                    app:layout_constraintBottom_toTopOf="@+id/pensionsEdit"
+                    app:layout_constraintStart_toStartOf="@+id/pensionsEdit" />
+
+                <EditText
+                    android:id="@+id/pensionsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/keoghAccountsEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/keoghAccountsEdit"
+                    app:layout_constraintTop_toTopOf="@+id/keoghAccountsEdit" />
+
+                <TextView
+                    android:id="@+id/otherRetirementText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Other"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/keoghAccountsEdit" />
+
+                <EditText
+                    android:id="@+id/otherRetirementEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/otherRetirementText" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/assert_personal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/assert_retirement_layout">
+
+                <TextView
+                    android:id="@+id/personalAssertText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:text="Personal Assert"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/primaryResidenceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Primary Residence"
+                    app:layout_constraintStart_toStartOf="@+id/personalAssertText"
+                    app:layout_constraintTop_toBottomOf="@+id/personalAssertText" />
+
+                <EditText
+                    android:id="@+id/primaryResidenceEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/primaryResidenceText" />
+
+
+                <TextView
+                    android:id="@+id/vacationPropertiesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Vacation Properties"
+                    app:layout_constraintBottom_toTopOf="@+id/vacationPropertiesEdit"
+                    app:layout_constraintStart_toStartOf="@+id/vacationPropertiesEdit" />
+
+                <EditText
+                    android:id="@+id/vacationPropertiesEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/primaryResidenceEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/primaryResidenceEdit"
+                    app:layout_constraintTop_toTopOf="@+id/primaryResidenceEdit" />
+
+                <TextView
+                    android:id="@+id/carsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Cars"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/primaryResidenceEdit" />
+
+                <EditText
+                    android:id="@+id/carsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carsText" />
+
+
+                <TextView
+                    android:id="@+id/boatsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Boats"
+                    app:layout_constraintBottom_toTopOf="@+id/boatsEdit"
+                    app:layout_constraintStart_toStartOf="@+id/boatsEdit" />
+
+                <EditText
+                    android:id="@+id/boatsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/carsEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/carsEdit"
+                    app:layout_constraintTop_toTopOf="@+id/carsEdit" />
+
+                <TextView
+                    android:id="@+id/homeFurnishingsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Home Furnishings"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carsEdit" />
+
+                <EditText
+                    android:id="@+id/homeFurnishingsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/homeFurnishingsText" />
+
+                <TextView
+                    android:id="@+id/artText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Art"
+                    app:layout_constraintBottom_toTopOf="@+id/artEdit"
+                    app:layout_constraintStart_toStartOf="@+id/artEdit" />
+
+                <EditText
+                    android:id="@+id/artEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/homeFurnishingsEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/homeFurnishingsEdit"
+                    app:layout_constraintTop_toTopOf="@+id/homeFurnishingsEdit" />
+
+                <TextView
+                    android:id="@+id/jewelryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Jewelry"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/homeFurnishingsEdit" />
+
+                <EditText
+                    android:id="@+id/jewelryEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/jewelryText" />
+
+                <TextView
+                    android:id="@+id/collectiblesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Collectibles"
+                    app:layout_constraintBottom_toTopOf="@+id/collectiblesEdit"
+                    app:layout_constraintStart_toStartOf="@+id/collectiblesEdit" />
+
+                <EditText
+                    android:id="@+id/collectiblesEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/jewelryEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/jewelryEdit"
+                    app:layout_constraintTop_toTopOf="@+id/jewelryEdit" />
+
+
+                <TextView
+                    android:id="@+id/otherPersonalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Other"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/jewelryEdit" />
+
+                <EditText
+                    android:id="@+id/otherPersonalEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/otherPersonalText" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/shortTermLiabilitiesFields_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/assert_personal_layout">
+
+                <TextView
+                    android:id="@+id/shortTermLiabilitiesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Short-Term Liabilities"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/creditCardsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Credit Cards"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/shortTermLiabilitiesText" />
+
+                <EditText
+                    android:id="@+id/creditCardsEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/creditCardsText" />
+
+
+                <TextView
+                    android:id="@+id/shortTermLoansText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Short Term Loans"
+                    app:layout_constraintBottom_toTopOf="@+id/shortTermLoansEdit"
+                    app:layout_constraintStart_toStartOf="@+id/shortTermLoansEdit" />
+
+                <EditText
+                    android:id="@+id/shortTermLoansEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/creditCardsEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/creditCardsEdit"
+                    app:layout_constraintTop_toTopOf="@+id/creditCardsEdit" />
+
+
+                <TextView
+                    android:id="@+id/outstandingTaxesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Outstanding Taxes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/creditCardsEdit" />
+
+                <EditText
+                    android:id="@+id/outstandingTaxesEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/outstandingTaxesText" />
+
+                <TextView
+                    android:id="@+id/otherLiabilitiesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Other"
+                    app:layout_constraintBottom_toTopOf="@+id/otherLiabilitiesEdit"
+                    app:layout_constraintStart_toStartOf="@+id/otherLiabilitiesEdit" />
+
+                <EditText
+                    android:id="@+id/otherLiabilitiesEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/outstandingTaxesEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/outstandingTaxesEdit"
+                    app:layout_constraintTop_toTopOf="@+id/outstandingTaxesEdit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/longTermLiabilitiesFields_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shortTermLiabilitiesFields_layout">
+
+                <TextView
+                    android:id="@+id/longTermLiabilitiesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Long-Term Liabilities"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mortgagesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Mortgages"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/longTermLiabilitiesText" />
+
+                <EditText
+                    android:id="@+id/mortgagesEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mortgagesText" />
+
+                <TextView
+                    android:id="@+id/investmentLoansText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Investment Loans"
+                    app:layout_constraintBottom_toTopOf="@+id/investmentLoansEdit"
+                    app:layout_constraintStart_toStartOf="@+id/investmentLoansEdit" />
+
+                <EditText
+                    android:id="@+id/investmentLoansEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/mortgagesEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/mortgagesEdit"
+                    app:layout_constraintTop_toTopOf="@+id/mortgagesEdit" />
+
+                <TextView
+                    android:id="@+id/personalLoansText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Personal Loans"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mortgagesEdit" />
+
+                <EditText
+                    android:id="@+id/personalLoansEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personalLoansText" />
+
+                <TextView
+                    android:id="@+id/studentLoansText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Student Loans"
+                    app:layout_constraintBottom_toTopOf="@+id/studentLoansEdit"
+                    app:layout_constraintStart_toStartOf="@+id/studentLoansEdit" />
+
+                <EditText
+                    android:id="@+id/studentLoansEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/personalLoansEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/personalLoansEdit"
+                    app:layout_constraintTop_toTopOf="@+id/personalLoansEdit" />
+
+                <TextView
+                    android:id="@+id/autoLoansText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Auto Loans"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personalLoansEdit" />
+
+                <EditText
+                    android:id="@+id/autoLoansEdit"
+                    android:layout_width="170dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/autoLoansText" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/result_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/longTermLiabilitiesFields_layout">
+
+                <TextView
+                    android:id="@+id/totalAssert_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:text="Total Asserts"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="250dp"
+                    android:layout_height="1dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/totalAssert_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/totalAssert_txt" />
+
+                <TextView
+                    android:id="@+id/totalAssert_output"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    app:layout_constraintBottom_toTopOf="@+id/view"
+                    app:layout_constraintEnd_toEndOf="@+id/view"
+                    app:layout_constraintStart_toStartOf="@+id/view" />
+
+                <TextView
+                    android:id="@+id/totalLibities_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:text="Total Liabilities"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/totalAssert_txt" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="250dp"
+                    android:layout_height="1dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/totalLibities_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/totalLibities_text" />
+
+                <TextView
+                    android:id="@+id/totalLibities_output"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    app:layout_constraintBottom_toTopOf="@+id/view2"
+                    app:layout_constraintEnd_toEndOf="@+id/view2"
+                    app:layout_constraintStart_toStartOf="@+id/view2" />
+
+                <TextView
+                    android:id="@+id/networth_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:text="Net Worth"
+                    app:layout_constraintStart_toStartOf="@+id/totalLibities_text"
+                    app:layout_constraintTop_toBottomOf="@+id/totalLibities_text" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="250dp"
+                    android:layout_height="1dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/networth_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/networth_text" />
+
+                <TextView
+                    android:id="@+id/networth_output"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    app:layout_constraintBottom_toTopOf="@+id/view3"
+                    app:layout_constraintEnd_toEndOf="@+id/view3"
+                    app:layout_constraintStart_toStartOf="@+id/view3" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/assert_chart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/result_layout" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/libilities_chart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/assert_chart" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/calcuate_btn"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/solid_btn_back"
+        android:text="Calculate"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/reset_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/reset_btn"
+        app:layout_constraintTop_toTopOf="@+id/reset_btn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/reset_btn"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/reset_background"
+        android:text="Reset"
+        android:textAllCaps="false"
+        android:textColor="@color/app_clr"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/calcuate_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LoanEMICalculator"
+        tools:targetApi="31">
+        <activity
+            android:name="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.SettingActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.CategoryActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.OnBoardingActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.NetWorthActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.NPVCalculatorActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.CashCounterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.CarLeaseCalculatorActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.CalculateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.SplashScreenActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

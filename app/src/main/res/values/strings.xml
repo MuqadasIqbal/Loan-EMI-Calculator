@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Loan EMI Calculator</string>
+
+    <string-array name="term_options">
+        <item>Months</item>
+        <item>Years</item>
+    </string-array>
+    <string-array name="rent_frequencies">
+        <item>Monthly</item>
+        <item>Weekly</item>
+        <item>Annually</item>
+    </string-array>
+    <string-array name="apy_pension">
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+
+    </string-array>
+    <string name="email">info@itwingtech.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="personnal_finance_assets_calculator"><![CDATA[Personnal Finance & Assets Calculator]]></string>
+    <string name="business_profitability_calculators"><![CDATA[Business & Profitability Calculators]]></string>
+    <string name="price_discount_calculator"><![CDATA[Price & Discount Calculator]]></string>
+    <string name="privacypolicy">The   "EMI Calculator"   application   is   intended   for entertainment purposes only. The app uses an algorithm to compare your photo with images of celebrities from our database and provides a similarity score based on facial features. However, the results are not guaranteed to be accurate or scientifically verified.</string>
+    <string name="Endrosment_description">The application does not imply any endorsement or relationship between you and the celebrities identified in your results.</string>
+    <string name="privacy_description">Your uploaded photos and personal information will be handled in accordance with our Privacy Policy and will not be shared with third parties without your consent.</string>
+    <string name="result_description">The application’s results are for amusement and novelty purposes only and should not be taken as factual or definitive statements regarding your likeness to any celebrity.</string>
+    <string name="updates_description">The application and its database may be updated from time to time, which could not impact the results of your matches.</string>
+
+
+    <string name="accept_terms_conditions"><![CDATA[Accept Terms & Conditions]]></string>
+    <string name="feedback_bugs"><![CDATA[Feedback & bugs]]></string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+</resources>

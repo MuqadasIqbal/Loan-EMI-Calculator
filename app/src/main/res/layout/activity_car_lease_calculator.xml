@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.itwingtech.com.saadapps.emicalculator.loan.finance.tool.Activities.CarLeaseCalculatorActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_clr"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/back_arrow"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/titleText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/titleText"
+                app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/myScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/loan1Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Loan1"
+                android:textAlignment="center"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/PriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loan1Text" />
+
+            <EditText
+                android:id="@+id/PriceEdit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_background"
+                android:inputType="number"
+                android:padding="5dp"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/PriceText"
+                app:layout_constraintTop_toBottomOf="@+id/PriceText" />
+
+            <TextView
+                android:id="@+id/paymentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                app:layout_constraintStart_toStartOf="@+id/PriceEdit"
+                app:layout_constraintTop_toBottomOf="@+id/PriceEdit" />
+
+            <EditText
+                android:id="@+id/paymentEdit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_background"
+                android:inputType="number"
+                android:padding="5dp"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/paymentText"
+                app:layout_constraintTop_toBottomOf="@+id/paymentText" />
+
+            <TextView
+                android:id="@+id/trade_AmountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                app:layout_constraintStart_toStartOf="@+id/paymentEdit"
+                app:layout_constraintTop_toBottomOf="@+id/paymentEdit" />
+
+            <EditText
+                android:id="@+id/trade_AmountEdit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_background"
+                android:inputType="number"
+                android:padding="5dp"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/trade_AmountText"
+                app:layout_constraintTop_toBottomOf="@+id/trade_AmountText" />
+
+            <TextView
+                android:id="@+id/loan2Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Loan2"
+                android:textAlignment="center"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/trade_AmountEdit"
+                app:layout_constraintTop_toBottomOf="@+id/trade_AmountEdit" />
+
+            <TextView
+                android:id="@+id/tradeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                app:layout_constraintStart_toStartOf="@+id/loan2Text"
+                app:layout_constraintTop_toBottomOf="@+id/loan2Text" />
+
+            <EditText
+                android:id="@+id/tradeEdit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_background"
+                android:inputType="number"
+                android:padding="5dp"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/tradeText"
+                app:layout_constraintTop_toBottomOf="@+id/tradeText" />
+
+            <TextView
+                android:id="@+id/valueText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                app:layout_constraintStart_toStartOf="@+id/tradeEdit"
+                app:layout_constraintTop_toBottomOf="@+id/tradeEdit" />
+
+            <EditText
+                android:id="@+id/valueEdit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_background"
+                android:inputType="number"
+                android:padding="5dp"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/valueText"
+                app:layout_constraintTop_toBottomOf="@+id/valueText" />
+
+            <TextView
+                android:id="@+id/interestRateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                app:layout_constraintStart_toStartOf="@+id/valueEdit"
+                app:layout_constraintTop_toBottomOf="@+id/valueEdit" />
+
+            <EditText
+                android:id="@+id/interestRateEdit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_background"
+                android:inputType="number"
+                android:padding="5dp"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/interestRateText"
+                app:layout_constraintTop_toBottomOf="@+id/interestRateText" />
+
+            <TextView
+                android:id="@+id/taxRateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                app:layout_constraintStart_toStartOf="@+id/interestRateEdit"
+                app:layout_constraintTop_toBottomOf="@+id/interestRateEdit" />
+
+            <EditText
+                android:id="@+id/taxRateEdit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_background"
+                android:inputType="number"
+                android:padding="5dp"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/taxRateText"
+                app:layout_constraintTop_toBottomOf="@+id/taxRateText" />
+
+
+            <TextView
+                android:id="@+id/termText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                app:layout_constraintStart_toStartOf="@+id/taxRateEdit"
+                app:layout_constraintTop_toBottomOf="@+id/taxRateEdit" />
+
+            <EditText
+                android:id="@+id/termEdit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_background"
+                android:inputType="number"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/termText"
+                app:layout_constraintTop_toBottomOf="@+id/termText" />
+
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/termText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/termText" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/calcuate_btn"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/solid_btn_back"
+                android:text="Calculate"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/reset_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/reset_btn"
+                app:layout_constraintTop_toTopOf="@+id/reset_btn" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/reset_btn"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/reset_background"
+                android:text="Reset"
+                android:textAllCaps="false"
+                android:textColor="@color/app_clr"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/calcuate_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/termEdit" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/app_clr"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/reset_btn"
+                app:layout_constraintTop_toBottomOf="@+id/reset_btn">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/result_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:text="Result"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toTopOf="@+id/view"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/result_text" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card"
+                        android:layout_width="160dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:padding="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cardView2"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:id="@+id/result_output1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView2"
+                        android:layout_width="160dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/card"
+                        app:layout_constraintTop_toBottomOf="@+id/view">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:id="@+id/result_output2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewloanResults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/app_clr"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reset_btn">
+
+                <GridLayout
+                    android:id="@+id/gridLayoutResults"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:columnCount="4"
+                    android:padding="16dp"
+                    android:rowCount="4">
+
+                    <TextView
+                        android:id="@+id/textLoanLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:text="Loan"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textLoan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:text="Loan 1"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textLoan2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:text="Loan 2"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textDifference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Difference"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textMonthlyEMI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:text="Monthly EMI"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textEMILoan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textEMILoan2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textEMIDifference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:textColor="@color/white" />
+
+
+                    <TextView
+                        android:id="@+id/textInterest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:text="Interest"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textInterestLoan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textInterestLoan2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textInterestDifference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textTotalAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:text="Total Amount"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textTotalAmountLoan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textTotalAmountLoan2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textTotalAmountDifference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:textColor="@color/white" />
+
+                </GridLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pie_chart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_result" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
